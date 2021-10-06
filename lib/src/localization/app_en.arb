@@ -1,0 +1,6 @@
+{
+  "appTitle": "School Planner",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
