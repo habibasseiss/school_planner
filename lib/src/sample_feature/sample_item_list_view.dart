@@ -6,21 +6,13 @@ import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
-  const SampleItemListView({
-    Key? key,
-    this.items = const [
-      SampleItem(1, "Joao"),
-      SampleItem(2, "Maria"),
-      SampleItem(3, "Jose")
-      ],
-  }) : super(key: key);
+  const SampleItemListView({Key? key}) : super(key: key);
 
   static const routeName = '/';
 
-  final List<SampleItem> items;
-
   @override
   Widget build(BuildContext context) {
+    final List<SampleItem> items = SampleItem.items;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Sample Items'),
@@ -53,20 +45,19 @@ class SampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-            title: Text(item.title),
-            leading: const CircleAvatar(
-              // Display the Flutter Logo image asset.
-              foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-            ),
-            onTap: () {
-              // Navigate to the details page.
-              Navigator.pushNamed(
-                context,
-                SampleItemDetailsView.routeName,
-              arguments : item
-              );
-            }
-          );
+              title: Text(item.title),
+              leading: const CircleAvatar(
+                // Display the Flutter Logo image asset.
+                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+              ),
+              onTap: () {
+                // Navigate to the details page.
+                Navigator.restorablePushNamed(
+                  context,
+                  SampleItemDetailsView.routeName,
+                  arguments: item.id,
+                );
+              });
         },
       ),
     );
