@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../settings/settings_view.dart';
-import 'sample_item.dart';
-import 'sample_item_details_view.dart';
+import 'Task.dart';
+import 'Tasks_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
@@ -12,10 +11,10 @@ class SampleItemListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<SampleItem> items = SampleItem.items;
+    final List<Task> items = Task.tasks;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: Center(child: Text('Tarefas')),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),

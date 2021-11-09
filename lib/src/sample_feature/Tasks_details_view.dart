@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_planner/src/sample_feature/sample_item.dart';
+import 'package:school_planner/src/sample_feature/Task.dart';
 
 /// Displays detailed information about a SampleItem.
 class SampleItemDetailsView extends StatelessWidget {
@@ -10,15 +10,15 @@ class SampleItemDetailsView extends StatelessWidget {
 
   final int id;
 
-  static const routeName = '/sample_item';
+  static const routeName = '/task';
 
   @override
   Widget build(BuildContext context) {
-    final item = SampleItem.items.firstWhere((item) => item.id == id);
+    final task = Task.tasks.firstWhere((task) => task.id == id);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(item.title),
+        title: Text(task.title),
       ),
       body: const Center(child: Text('Mais informação aqui')),
     );
