@@ -11,6 +11,7 @@ environment:
 
 dependencies:
   provider: ^6.0.1
+  flutter_svg: ^0.23.0+1
   
   flutter:
     sdk: flutter
@@ -36,9 +37,7 @@ flutter_icons:
 flutter:
   uses-material-design: true
 
-  # Enable generation of localized Strings from arb files.
-  generate: true
-
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/icons/

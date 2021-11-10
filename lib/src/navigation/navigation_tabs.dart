@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/home/home_view.dart';
 import 'package:school_planner/src/navigation/base_navigator.dart';
 import 'package:school_planner/src/sample_feature/sample_item_details_view.dart';
 import 'package:school_planner/src/sample_feature/sample_item_list_view.dart';
@@ -15,7 +16,11 @@ class NavigationTabs {
           return MaterialPageRoute<void>(
             settings: routeSettings,
             builder: (BuildContext context) {
-              return Container();
+              switch (routeSettings.name) {
+                case HomeView.routeName:
+                default:
+                  return const HomeView();
+              }
             },
           );
         },
@@ -61,7 +66,7 @@ class NavigationTabs {
       ),
     ),
     NavigationTab(
-      label: 'Configurações',
+      label: 'Opções',
       icon: const Icon(Icons.settings_outlined),
       activeIcon: const Icon(Icons.settings),
       page: BaseNavigator(
