@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../settings/settings_view.dart';
 import 'package:school_planner/src/models/task.dart';
 import 'tasks_details_view.dart';
 
@@ -9,24 +8,32 @@ class SampleItemListView extends StatelessWidget {
 
   static const routeName = '/';
 
+  void pressAddButton(BuildContext context) {
+    // TODO: Add a new task
+  }
+
   @override
   Widget build(BuildContext context) {
     final List<Task> items = Task.tasks;
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Tarefas')),
+        title: const Text('Tarefas'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              // Navigate to the settings page. If the user leaves and returns
-              // to the app after it has been killed while running in the
-              // background, the navigation stack is restored.
-              Navigator.restorablePushNamed(context, SettingsView.routeName);
-            },
-          ),
+          // if platform is ios
+          if (Theme.of(context).platform == TargetPlatform.iOS)
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () => pressAddButton(context),
+            ),
         ],
       ),
+
+      floatingActionButton: Theme.of(context).platform == TargetPlatform.android
+          ? FloatingActionButton(
+              child: const Icon(Icons.add),
+              onPressed: () => pressAddButton(context),
+            )
+          : null,
 
       // To work with lists that may contain a large number of items, it’s best
       // to use the ListView.builder constructor.
