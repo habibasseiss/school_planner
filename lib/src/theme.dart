@@ -2,15 +2,8 @@ import 'package:flutter/material.dart';
 
 var theme = ThemeData.light().copyWith(
   appBarTheme: AppBarTheme(
-    color: Colors.grey[100],
-    titleTextStyle: const TextStyle(
-      color: Colors.black,
-      fontSize: 20,
-      fontWeight: FontWeight.w600,
-    ),
-    actionsIconTheme: const IconThemeData(
-      color: Colors.black,
-    ),
+    foregroundColor: Colors.black,
+    backgroundColor: Colors.grey[100],
     elevation: 0,
     shape: Border(bottom: BorderSide(color: Colors.grey[300]!, width: 1)),
   ),
@@ -22,8 +15,10 @@ var theme = ThemeData.light().copyWith(
       ),
 );
 var darkTheme = ThemeData.dark().copyWith(
-    // appBarTheme: AppBarTheme(
-    //   color: ThemeData.dark().scaffoldBackgroundColor,
-    //   elevation: 0,
-    // ),
-    );
+  textTheme: ThemeData.dark().textTheme.copyWith(
+        headline2: ThemeData.dark()
+            .textTheme
+            .headline2!
+            .copyWith(fontSize: 16, fontWeight: FontWeight.normal),
+      ),
+);

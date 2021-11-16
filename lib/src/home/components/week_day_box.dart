@@ -15,7 +15,7 @@ class WeekDayBox extends StatelessWidget {
         children: [
           Text(getWeekDay(weekDay + 1),
               style: Theme.of(context).textTheme.headline6!.apply(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontWeightDelta: -2,
                     fontSizeDelta: -4,
                   )),
@@ -66,7 +66,7 @@ class DotIndicator extends StatelessWidget {
       width: 10,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

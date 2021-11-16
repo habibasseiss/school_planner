@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 enum TaskType {
@@ -28,18 +30,22 @@ class TaskListTile extends StatelessWidget {
       title: Text(title, style: Theme.of(context).textTheme.bodyText2),
       subtitle: Text(subtitle),
       leading: getIcon(type),
+      contentPadding: const EdgeInsets.only(left: 16),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('05/12',
+              Text(
+                  (1 + Random().nextInt(28)).toString() +
+                      '/' +
+                      (10 + Random().nextInt(3)).toString(),
                   style: Theme.of(context).textTheme.subtitle1!.apply(
                       fontSizeDelta: -3,
                       color: Colors.grey,
                       fontWeightDelta: 2)),
-              Text('10:00',
+              Text((7 + Random().nextInt(12)).toString() + ':00',
                   style: Theme.of(context).textTheme.subtitle1!.apply(
                         fontSizeDelta: -2,
                       )),
@@ -50,6 +56,7 @@ class TaskListTile extends StatelessWidget {
               padding: EdgeInsets.only(left: 8.0),
               child: Icon(Icons.error, color: Colors.red),
             ),
+          const Icon(Icons.chevron_right),
         ],
       ),
     );

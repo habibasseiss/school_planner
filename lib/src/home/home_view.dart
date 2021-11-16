@@ -10,15 +10,15 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String logoPath = Theme.of(context).brightness == Brightness.dark
+        ? 'assets/icons/logo-dark.svg'
+        : 'assets/icons/logo.svg';
     return Scaffold(
       appBar: AppBar(
-        title: SvgPicture.asset(
-          'assets/icons/logo.svg',
-          height: 40,
-        ),
+        title: SvgPicture.asset(logoPath, height: 40),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(15),
         children: [
           SizedBox(
             height: 80,
@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
           const TaskListTile(
             title: 'Prova',
             subtitle: 'Algoritmos 2',
-            type: TaskType.test,
+            type: TaskType.meeting,
             alert: true,
           ),
           const Divider(),
@@ -59,14 +59,20 @@ class HomeView extends StatelessWidget {
           ),
           const Divider(),
           const TaskListTile(
-            title: 'Prova 2',
-            subtitle: 'Algoritmos 2',
+            title: 'Prova',
+            subtitle: 'Inteligência Artificial',
             type: TaskType.test,
           ),
           const Divider(),
           const TaskListTile(
-            title: 'Prova 2',
-            subtitle: 'Algoritmos 2',
+            title: 'Trabalho de Computação em Nuvem',
+            subtitle: 'Tópicos Especiais em TI',
+            type: TaskType.homework,
+          ),
+          const Divider(),
+          const TaskListTile(
+            title: 'Prova de recuperação',
+            subtitle: 'Estrutura de Dados 2',
             type: TaskType.test,
           ),
         ],
