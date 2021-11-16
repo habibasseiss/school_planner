@@ -1,6 +1,10 @@
-import 'package:school_planner/src/sample_feature/subject.dart';
+// import 'subject.dart';
 
-enum Type { Prova, Trabalho, Atividade }
+enum TaskType {
+  test,
+  homework,
+  meeting,
+}
 
 class Task {
   Task(
@@ -18,7 +22,7 @@ class Task {
   final String desc;
   final DateTime date;
   final bool done;
-  final Type type;
+  final TaskType type;
   //final Subject subject;
 
   // getter for sample data
@@ -32,9 +36,9 @@ class Task {
       "Prova de Geografia",
       DateTime.utc(2021, 11, 20),
       false,
-      Type.Prova,
+      TaskType.test,
     ),
     Task(1, "Trabalho", "Trabalho de História", DateTime.utc(2021, 11, 15),
-        false, Type.Trabalho),
+        false, TaskType.homework),
   ];
 }

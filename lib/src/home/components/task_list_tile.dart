@@ -1,12 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-
-enum TaskType {
-  test,
-  homework,
-  meeting,
-}
+import 'package:school_planner/src/models/task.dart';
 
 class TaskListTile extends StatelessWidget {
   const TaskListTile({

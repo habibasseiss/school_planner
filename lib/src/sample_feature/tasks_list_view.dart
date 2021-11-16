@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../settings/settings_view.dart';
-import 'task.dart';
+import 'package:school_planner/src/models/task.dart';
 import 'tasks_details_view.dart';
 
 /// Displays a list of SampleItems.

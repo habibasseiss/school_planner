@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:school_planner/src/home/components/task_list_tile.dart';
 import 'package:school_planner/src/home/components/week_day_box.dart';
+import 'package:school_planner/src/models/task.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
