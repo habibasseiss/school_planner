@@ -1,4 +1,4 @@
-import 'Professor.dart';
+// import 'professor.dart';
 
 class Subject {
   Subject(

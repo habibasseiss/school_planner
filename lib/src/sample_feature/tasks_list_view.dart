@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../settings/settings_view.dart';
-import 'Task.dart';
-import 'Tasks_details_view.dart';
+import 'task.dart';
+import 'tasks_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {

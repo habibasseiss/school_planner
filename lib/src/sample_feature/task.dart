@@ -1,4 +1,4 @@
-import 'package:school_planner/src/sample_feature/Subject.dart';
+import 'package:school_planner/src/sample_feature/subject.dart';
 
 enum Type { Prova, Trabalho, Atividade }
 
