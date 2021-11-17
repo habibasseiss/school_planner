@@ -7,11 +7,40 @@ class TeacherForm extends StatefulWidget {
   _TeacherFormState createState() => _TeacherFormState();
 }
 
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
 class _TeacherFormState extends State<TeacherForm> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Form(),
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: "Insira o nome do Professor",
+            ),
+            validator: (String? value) {
+              if (value == null || value.isEmpty) {
+                return "Por favor insira o nome do professor";
+              }
+              return null;
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  // Process data. (Save the data)
+                }
+              },
+              child: const Text('Submit'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
