@@ -4,6 +4,7 @@ import 'package:school_planner/src/navigation/base_navigator.dart';
 import 'package:school_planner/src/sample_feature/Tasks_details_view.dart';
 import 'package:school_planner/src/sample_feature/Tasks_list_view.dart';
 import 'package:school_planner/src/settings/settings_view.dart';
+import 'package:school_planner/src/calendar/calendar.dart';
 
 class NavigationTabs {
   static List<NavigationTab> tabs = [
@@ -58,7 +59,7 @@ class NavigationTabs {
         onGenerateRoute: (RouteSettings routeSettings) {
           return MaterialPageRoute<void>(
             settings: routeSettings,
-            builder: (BuildContext context) {
+            builder: (_TableBasicsExampleState) {
               return Container();
             },
           );
