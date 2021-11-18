@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/form/teacher_form.dart';
 import 'package:school_planner/src/home/home_view.dart';
 import 'package:school_planner/src/navigation/base_navigator.dart';
 import 'package:school_planner/src/sample_feature/Tasks_details_view.dart';
@@ -59,7 +60,7 @@ class NavigationTabs {
           return MaterialPageRoute<void>(
             settings: routeSettings,
             builder: (BuildContext context) {
-              return Container();
+              return const TeacherForm();
             },
           );
         },
