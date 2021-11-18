@@ -59,8 +59,8 @@ class NavigationTabs {
         onGenerateRoute: (RouteSettings routeSettings) {
           return MaterialPageRoute<void>(
             settings: routeSettings,
-            builder: (_TableBasicsExampleState) {
-              return Container();
+            builder: (BuildContext context) {
+              return TableBasicsExample();
             },
           );
         },
