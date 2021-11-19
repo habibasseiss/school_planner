@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:school_planner/src/models/task.dart';
-import 'tasks_details_view.dart';
+import 'package:school_planner/src/tasks/Tasks_details_view.dart';
 
 /// Displays a list of SampleItems.
 class SampleItemListView extends StatelessWidget {
