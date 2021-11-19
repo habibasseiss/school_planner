@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/home/components/task_list_tile.dart';
 import 'package:school_planner/src/models/task.dart';
 import 'package:school_planner/src/tasks/Tasks_details_view.dart';
 
@@ -52,10 +53,7 @@ class SampleItemListView extends StatelessWidget {
 
           return ListTile(
               title: Text(item.title),
-              leading: const CircleAvatar(
-                // Display the Flutter Logo image asset.
-                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-              ),
+              leading: getIcon(items[index].type),
               onTap: () {
                 // Navigate to the details page.
                 Navigator.restorablePushNamed(
@@ -66,6 +64,31 @@ class SampleItemListView extends StatelessWidget {
               });
         },
       ),
+    );
+  }
+
+  Widget? getIcon(TaskType type) {
+    IconData iconData;
+    Color color;
+
+    switch (type) {
+      case TaskType.test:
+        iconData = Icons.assignment;
+        color = Colors.deepPurple;
+        break;
+      case TaskType.homework:
+        iconData = Icons.auto_stories;
+        color = Colors.deepOrange;
+        break;
+      case TaskType.meeting:
+        iconData = Icons.people;
+        color = Colors.teal;
+        break;
+    }
+
+    return CircleAvatar(
+      backgroundColor: color,
+      child: Icon(iconData, color: Colors.white.withAlpha(220)),
     );
   }
 }
