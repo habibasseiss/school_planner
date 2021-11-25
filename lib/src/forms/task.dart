@@ -1,89 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/helpers/custom_text_form.dart';
 
-class TeacherForm extends StatefulWidget {
-  const TeacherForm({Key? key}) : super(key: key);
+class TaskForm extends StatefulWidget {
+  const TaskForm({Key? key}) : super(key: key);
 
   @override
-  _TeacherFormState createState() => _TeacherFormState();
+  _TaskFormState createState() => _TaskFormState();
 }
 
 final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-class _TeacherFormState extends State<TeacherForm> {
+class _TaskFormState extends State<TaskForm> {
   @override
   Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: "Insira o nome o titulo",
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const Expanded(
+              child: CustomTextForm(name: "O Titulo da Tarefa"),
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return "Por favor insira o titulo da tarefa";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: "Insira o nome a descricao da tarefa",
+            const Expanded(
+              child: CustomTextForm(name: "A Descricao da tarefa"),
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return "Por favor a descricao da tarefa";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: "Insira a data",
+            const Expanded(
+              child: CustomTextForm(name: "A data da tarefa"),
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return "Por favor insira a data";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: "Insira o nome o status",
+            const Expanded(
+              child: CustomTextForm(name: "O Status da tarefa"),
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return "Por favor insira o status";
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              hintText: "Insira o nome o tipo",
+            const Expanded(
+              child: CustomTextForm(name: "O Tipo"),
             ),
-            validator: (String? value) {
-              if (value == null || value.isEmpty) {
-                return "Por favor insira o tipo";
-              }
-              return null;
-            },
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  // Process data. (Save the data)
-                }
-              },
-              child: const Text('Submit'),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    // Process data. (Save the data)
+                  }
+                },
+                child: const Text('Submit'),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

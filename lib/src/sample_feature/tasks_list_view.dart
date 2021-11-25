@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/forms/task.dart';
 import 'package:school_planner/src/models/task.dart';
+import 'package:school_planner/src/navigation/base_navigator.dart';
 import 'tasks_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -8,8 +10,17 @@ class SampleItemListView extends StatelessWidget {
 
   static const routeName = '/';
 
-  void pressAddButton(BuildContext context) {
-    // TODO: Add a new task
+  pressAddButton(BuildContext context) {
+    BaseNavigator(
+      onGenerateRoute: (RouteSettings routeSettings) {
+        return MaterialPageRoute<void>(
+          settings: routeSettings,
+          builder: (BuildContext context) {
+            return const TaskForm();
+          },
+        );
+      },
+    );
   }
 
   @override
