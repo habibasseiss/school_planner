@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/forms/task.dart';
 import 'package:school_planner/src/home/home_view.dart';
 import 'package:school_planner/src/navigation/base_navigator.dart';
 import 'package:school_planner/src/sample_feature/Tasks_details_view.dart';
@@ -36,6 +37,9 @@ class NavigationTabs {
             settings: routeSettings,
             builder: (BuildContext context) {
               switch (routeSettings.name) {
+                // Task form
+                case TaskForm.routeName:
+                  return const TaskForm();
                 // Sample Item Details Page
                 case SampleItemDetailsView.routeName:
                   final id = routeSettings.arguments as int;

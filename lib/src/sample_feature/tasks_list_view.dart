@@ -11,16 +11,8 @@ class SampleItemListView extends StatelessWidget {
   static const routeName = '/';
 
   pressAddButton(BuildContext context) {
-    BaseNavigator(
-      onGenerateRoute: (RouteSettings routeSettings) {
-        return MaterialPageRoute<void>(
-          settings: routeSettings,
-          builder: (BuildContext context) {
-            return const TaskForm();
-          },
-        );
-      },
-    );
+    // Navigate to the form page.
+    Navigator.restorablePushNamed(context, TaskForm.routeName);
   }
 
   @override

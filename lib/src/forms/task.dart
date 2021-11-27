@@ -4,6 +4,8 @@ import 'package:school_planner/src/helpers/custom_text_form.dart';
 class TaskForm extends StatefulWidget {
   const TaskForm({Key? key}) : super(key: key);
 
+  static const routeName = '/task-form';
+
   @override
   _TaskFormState createState() => _TaskFormState();
 }
