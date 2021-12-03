@@ -21,13 +21,7 @@ class HomeView extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(15),
         children: [
-          SizedBox(
-            height: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(7, (index) => WeekDayBox(index)),
-            ),
-          ),
+          
           const SizedBox(height: 20),
           Text(
             'Atividades atrasadas',
