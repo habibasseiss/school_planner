@@ -1,5 +1,3 @@
-// import 'subject.dart';
-
 import 'package:school_planner/src/models/subject.dart';
 
 enum TaskType {
