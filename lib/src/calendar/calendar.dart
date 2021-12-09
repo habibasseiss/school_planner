@@ -32,6 +32,9 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
           // the time-part of compared DateTime objects.
           return isSameDay(_selectedDay, day);
         },
+      headerStyle: HeaderStyle(formatButtonVisible: false),
+     // titleCentered: true,
+
         onDaySelected: (selectedDay, focusedDay) {
           if (!isSameDay(_selectedDay, selectedDay)) {
             // Call `setState()` when updating the selected day
