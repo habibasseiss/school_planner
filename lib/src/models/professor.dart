@@ -8,7 +8,8 @@ class Professor {
 
   // fixed sample data
   static final List<Professor> _professors = [
-    Professor(1, "George"),
-    Professor(2, "Ricardo"),
+    Professor(0, "George"),
+    Professor(1, "Ricardo"),
+    Professor(2, "Habib")
   ];
 }

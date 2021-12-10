@@ -11,6 +11,6 @@ class DB {
 
   get database async {
     if (_database != null) return _database;
-    //return await _initDatabase();
+    //return await _initdatabase();
   }
 }

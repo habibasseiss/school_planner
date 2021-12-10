@@ -53,6 +53,7 @@ class SampleItemListView extends StatelessWidget {
 
           return ListTile(
               title: Text(item.title),
+              subtitle: Text(item.subject.title),
               leading: getIcon(items[index].type),
               onTap: () {
                 // Navigate to the details page.
