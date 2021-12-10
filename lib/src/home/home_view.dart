@@ -21,25 +21,26 @@ class HomeView extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(15),
         children: [
-          
           const SizedBox(height: 20),
           Text(
             'Atividades atrasadas',
             style: Theme.of(context).textTheme.headline2,
           ),
           const SizedBox(height: 10),
-          const TaskListTile(
+          TaskListTile(
             title: 'Prova',
             subtitle: 'Algoritmos 2',
             type: TaskType.meeting,
             alert: true,
+            date: DateTime.utc(2021, 02, 18),
           ),
           const Divider(),
-          const TaskListTile(
+          TaskListTile(
             title: 'Trabalho de Redes Neurais',
             subtitle: 'Inteligência Artificial',
             type: TaskType.homework,
             alert: true,
+            date: DateTime.utc(2021, 02, 18),
           ),
           const SizedBox(height: 30),
           Text(
@@ -47,28 +48,32 @@ class HomeView extends StatelessWidget {
             style: Theme.of(context).textTheme.headline2,
           ),
           const SizedBox(height: 10),
-          const TaskListTile(
+          TaskListTile(
             title: 'Reunião de Projeto',
             subtitle: 'Aplicativos Móveis',
             type: TaskType.meeting,
+            date: DateTime.utc(2021, 02, 18),
           ),
           const Divider(),
-          const TaskListTile(
+          TaskListTile(
             title: 'Prova',
             subtitle: 'Inteligência Artificial',
             type: TaskType.test,
+            date: DateTime.utc(2021, 02, 18),
           ),
           const Divider(),
-          const TaskListTile(
+          TaskListTile(
             title: 'Trabalho de Computação em Nuvem',
             subtitle: 'Tópicos Especiais em TI',
             type: TaskType.homework,
+            date: DateTime.utc(2021, 02, 18),
           ),
           const Divider(),
-          const TaskListTile(
+          TaskListTile(
             title: 'Prova de recuperação',
             subtitle: 'Estrutura de Dados 2',
             type: TaskType.test,
+            date: DateTime.utc(2021, 02, 18),
           ),
         ],
       ),

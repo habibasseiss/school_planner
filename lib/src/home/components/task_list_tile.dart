@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:school_planner/src/models/task.dart';
 
 class TaskListTile extends StatelessWidget {
@@ -8,6 +9,7 @@ class TaskListTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.type,
+    required this.date,
     this.alert = false,
   }) : super(key: key);
 
@@ -15,7 +17,7 @@ class TaskListTile extends StatelessWidget {
   final String subtitle;
   final TaskType type;
   final bool alert;
-  //final DateTime date;
+  final DateTime date;
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +34,12 @@ class TaskListTile extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                  (1 + Random().nextInt(28)).toString() +
-                      '/' +
-                      (10 + Random().nextInt(3)).toString(),
+              Text(DateFormat("dd/MM").format(this.date),
                   style: Theme.of(context).textTheme.subtitle1!.apply(
                       fontSizeDelta: -3,
                       color: Colors.grey,
                       fontWeightDelta: 2)),
-              Text((7 + Random().nextInt(12)).toString() + ':00',
+              Text(DateFormat("hh:mm").format(this.date),
                   style: Theme.of(context).textTheme.subtitle1!.apply(
                         fontSizeDelta: -2,
                       )),

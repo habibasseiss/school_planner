@@ -53,12 +53,11 @@ class SampleItemListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final item = items[index];
 
-          return Column(children: [
-            TaskListTile(
-                title: item.title,
-                subtitle: item.subject.title,
-                type: item.type),
-          ]);
+          return TaskListTile(
+              title: item.title,
+              subtitle: item.subject.title,
+              type: item.type,
+              date: item.date);
           /*ListTile(
               title: Text(item.title),
               subtitle: Text(item.subject.title),
