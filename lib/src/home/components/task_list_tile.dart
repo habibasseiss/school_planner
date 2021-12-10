@@ -15,6 +15,7 @@ class TaskListTile extends StatelessWidget {
   final String subtitle;
   final TaskType type;
   final bool alert;
+  //final DateTime date;
 
   @override
   Widget build(BuildContext context) {

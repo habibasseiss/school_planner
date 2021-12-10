@@ -53,7 +53,13 @@ class SampleItemListView extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           final item = items[index];
 
-          return ListTile(
+          return Column(children: [
+            TaskListTile(
+                title: item.title,
+                subtitle: item.subject.title,
+                type: item.type),
+          ]);
+          /*ListTile(
               title: Text(item.title),
               subtitle: Text(item.subject.title),
               leading: getIcon(items[index].type),
@@ -64,7 +70,7 @@ class SampleItemListView extends StatelessWidget {
                   SampleItemDetailsView.routeName,
                   arguments: item.id,
                 );
-              });
+              });*/
         },
       ),
     );
