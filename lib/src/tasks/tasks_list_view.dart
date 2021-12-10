@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_planner/src/forms/task.dart';
 import 'package:school_planner/src/home/components/task_list_tile.dart';
 import 'package:school_planner/src/models/task.dart';
 import 'package:school_planner/src/tasks/Tasks_details_view.dart';
@@ -9,8 +10,9 @@ class SampleItemListView extends StatelessWidget {
 
   static const routeName = '/';
 
-  void pressAddButton(BuildContext context) {
-    // TODO: Add a new task
+  pressAddButton(BuildContext context) {
+    // Navigate to the form page.
+    Navigator.restorablePushNamed(context, TaskForm.routeName);
   }
 
   @override
