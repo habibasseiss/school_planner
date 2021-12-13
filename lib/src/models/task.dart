@@ -37,5 +37,15 @@ class Task {
         Subject.subjects[2]),
     Task(4, "Prova de recuperação", "Prova de recuperação", DateTime.now(),
         false, TaskType.test, Subject.subjects[3]),
+    Task(5, "Prova", "Prova de recuperação", DateTime.utc(2021, 18, 02, 12, 0),
+        false, TaskType.test, Subject.subjects[4]),
+    Task(
+        5,
+        "Trabalho de Redes Neurais",
+        "Trabalho de Redes Neurais",
+        DateTime.utc(2021, 18, 02, 12, 0),
+        false,
+        TaskType.test,
+        Subject.subjects[1]),
   ];
 }
