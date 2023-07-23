@@ -1,5 +1,7 @@
 # school_planner
 
+![school_planner](https://github.com/habibasseiss/school_planner/assets/521863/e9679d62-6792-4d08-ba49-5e6760481ba1)
+
 A new Flutter project.
 
 ## Getting Started
